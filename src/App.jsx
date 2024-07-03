@@ -3,6 +3,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Home } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Overview from "./pages/Overview";
+import CourseDetail from "./pages/CourseDetail";
 import Layout from "./layouts/default"; // available: default, navbar, sidebar
 import Index from "./pages/Index.jsx";
 const queryClient = new QueryClient();
@@ -24,7 +26,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
-              {/* Add more routes here as needed */}
+              <Route path="/overview" element={<Overview />} />
+              <Route path="/course-detail" element={<CourseDetail />} />
             </Route>
           </Routes>
         </Router>
